@@ -24,4 +24,10 @@ class MainKtTest {
         )
         assertThat(sortImports(exp.shuffled()), `is`(exp))
     }
+
+    @Test
+    fun canGetImportNameGivenString() {
+        assertThat(getImport("import A"), `is`("A"))
+        assertThat(getImport("import wacc.antlr.WaccParser"), `is`("wacc.antlr.WaccParser"))
+    }
 }
