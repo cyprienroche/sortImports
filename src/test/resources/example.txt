@@ -1,8 +1,0 @@
-import wacc.antlr.WaccParser
-import wacc.antlr.WaccParser.ArrayTypeContext
-import wacc.antlr.WaccParser.BaseTypeContext
-import wacc.antlr.WaccParser.PairElemTypeContext
-import wacc.antlr.WaccParser.PairTypeContext
-import wacc.antlr.WaccParserBaseVisitor
-import wacc.ast.ArrayT
-import wacc.ast.GenericPairT
