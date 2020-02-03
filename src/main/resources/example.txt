@@ -1,0 +1,15 @@
+import wacc.antlr.WaccParser
+import wacc.antlr.WaccParser.ArrayTypeContext
+import wacc.antlr.WaccParser.BaseTypeContext
+import wacc.antlr.WaccParser.PairElemTypeContext
+import wacc.antlr.WaccParser.PairTypeContext
+import wacc.antlr.WaccParserBaseVisitor
+import wacc.ast.ArrayT
+import wacc.ast.GenericPairT
+import wacc.ast.InvalidType
+import wacc.ast.PairT
+import wacc.ast.Type
+import wacc.ast.boolT
+import wacc.ast.charT
+import wacc.ast.intT
+import wacc.ast.stringT
