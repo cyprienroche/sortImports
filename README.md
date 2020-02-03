@@ -6,7 +6,7 @@ But I needed the task to with Grovvy since it is what my team and I agreed to us
 
 Simply add the following to your build.gradle:
 
-'''
+```
 def path = './src/main/resources/filesToSortImports.txt'
 
 task sortImports {
@@ -30,7 +30,7 @@ private static void sortImportsIsFile(File file) {
     file.write(sortedImports.join("\n"))
 }
 
-'''
+```
 
 Change the path to suit your needs. 
 
