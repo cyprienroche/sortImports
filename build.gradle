@@ -20,8 +20,10 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+def path = './src/main/resources/filesToSortImports.txt'
+
 task sortImports {
-    file('./src/main/resources/filesToSortImports.txt').eachLine {
+    file(path).eachLine {
         def file = file(it)
         sortImportsFile(file)
     }
