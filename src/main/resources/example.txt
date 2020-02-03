@@ -13,3 +13,8 @@ import wacc.ast.boolT
 import wacc.ast.charT
 import wacc.ast.intT
 import wacc.ast.stringT
+
+fun main(args: Array<String>) {
+    val file = File(args[0])
+    file.writeText(file.readLines().sorted().reduce { a, b -> a + "\n" + b})
+}

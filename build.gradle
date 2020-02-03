@@ -11,7 +11,6 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 compileKotlin {
@@ -20,3 +19,40 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
+task hello {
+    doLast {
+        println "hello"
+    }
+}
+
+//task loadfile {
+//    file('./src/main/resources/filesToSortImports.txt').eachLine {
+//        def file = file(it)
+//        if (file.isFile()) {
+//            while (file)
+//            def sortedImports = file.readLines().forEach {
+//                if (it.startsWith("import")) {
+//
+//                }
+//            }
+//            file.write()
+//        }
+//    }
+//
+//    doLast {
+//        fileListFromDir('./src/main/kotlin').each { File file ->
+//            ant.loadfile(srcFile: file, property: file.name)
+//            println "I'm fond of $file.name"
+//        }
+//    }
+//}
+
+File[] fileListFromDir(String dir) {
+    file(dir).listFiles({file -> file.isFile() } as FileFilter).sort()
+}
+
+File fileFromPath(String path) {
+    file(path)
+}
+
