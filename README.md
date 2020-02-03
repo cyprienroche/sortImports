@@ -1,4 +1,4 @@
-# sort Imports
+# Sort imports
 sorts the imports automatically
 
 Main.kt contains code for Kotlin. 
