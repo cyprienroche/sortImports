@@ -1,9 +1,13 @@
-fun main() {
-    val s = "import a"
-    println(getImport(s))
+import java.io.File
+
+fun main(args: Array<String>) {
+    println(args.get(0))
 }
 
 const val delimiter = "import "
+
+fun fileToList(fileName: String): List<String>
+        = File(fileName).readLines()
 
 fun getImport(imp: String): String = imp.split(delimiter)[1]
 
