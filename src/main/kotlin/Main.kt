@@ -6,7 +6,6 @@ fun main(args: Array<String>) {
     val imps = fileToList(fileName)
     val sortedImps = imps.map { getImport(it) }.sortImports()
     val restoredImp = sortedImps.map { restoreImport(it) }
-    println(sortedImps)
     printBackToFile(fileName, restoredImp)
 }
 

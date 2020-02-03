@@ -18,13 +18,13 @@ class MainKtTest {
     @Test
     fun canSortBasic() {
         val imp = listOf("a", "aa", "ab", "b", "bb")
-        assertThat(sortImports(imp), `is`(imp))
+        assertThat(imp.sortImports(), `is`(imp))
     }
 
     @Test
     fun canSortComplex() {
 
-        assertThat(sortImports(listOfImports.shuffled()), `is`(listOfImports))
+        assertThat(listOfImports.shuffled().sortImports(), `is`(listOfImports))
     }
 
     @Test
@@ -35,6 +35,6 @@ class MainKtTest {
 
     @Test
     fun canGetListFromFile() {
-        assertThat(fileToList("src/test/resources/example.txt"), `is`(listOfImports))
+        assertThat(fileToList("src/test/resources/example.txt").map { getImport(it) }, `is`(listOfImports))
     }
 }
