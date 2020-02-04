@@ -40,8 +40,9 @@ private static void sortImportsFile(File file) {
 }
 
 private static void sortImportsIsFile(File file) {
-    def partition = file.readLines().split { it.startsWith("import") }
-    def sortedImports = partition[0].sort() + partition[1]
+    def partitionImp = file.readLines().split { it.startsWith("import ") }
+    def partitionPack = partitionImp[1].split { it.startsWith("package ") }
+    def sortedImports = partitionPack[0] + partitionImp[0].sort() + partitionPack[1]
     file.write(sortedImports.join("\n"))
 }
 
