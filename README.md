@@ -10,9 +10,11 @@ Simply add the following to your build.gradle:
 def path = './src/main/resources/filesToSortImports.txt'
 
 task sortImports {
-    file(path).eachLine {
-        def file = file(it)
-        sortImportsFile(file)
+    doLast {
+        file(path).eachLine {
+            def file = file(it)
+            sortImportsFile(file)
+        }
     }
 }
 
@@ -29,6 +31,7 @@ private static void sortImportsIsFile(File file) {
     def sortedImports = partition[0].sort() + partition[1]
     file.write(sortedImports.join("\n"))
 }
+
 
 ```
 
