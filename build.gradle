@@ -43,6 +43,6 @@ private static void sortImportsIsFile(File file) {
     def partitionImp = file.readLines().split { it.startsWith("import ") }
     def partitionPack = partitionImp[1].split { it.startsWith("package ") }
     def sortedImports = partitionPack[0] + partitionImp[0].sort() + partitionPack[1]
-    file.write(sortedImports.join("\n"))
+    file.write(sortedImports.join("\n") + '\n')
 }
 
