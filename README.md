@@ -44,4 +44,4 @@ You can specify either relative or absolute paths to the files.
 You can also specify a folder. All files in that folder as well as sub-folders will have imports sorted.
 
 I recommend only using this for files that need imports to be sorted at one given time.
-For large projects this task may add quite a large overhead. 
+For large projects this task may bear quite a large overhead. 
