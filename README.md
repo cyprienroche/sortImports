@@ -32,7 +32,7 @@ private static void sortImportsIsFile(File file) {
     while (partitionPack[1][0] =~ /(^\s*$)/) {
         partitionPack[1] = partitionPack[1].tail()
     }
-    def sortedImports = partitionPack[0] + [""] + partitionImp[0].sort() + [""] + partitionPack[1]
+    def sortedImports = partitionPack[0].sort() + [""] + partitionImp[0].sort() + [""] + partitionPack[1]
     file.write(sortedImports.join("\n") + '\n')
 }
 
