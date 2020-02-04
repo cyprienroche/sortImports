@@ -23,9 +23,11 @@ compileTestKotlin {
 def path = './src/main/resources/filesToSortImports.txt'
 
 task sortImports {
-    file(path).eachLine {
-        def file = file(it)
-        sortImportsFile(file)
+    doLast {
+        file(path).eachLine {
+            def file = file(it)
+            sortImportsFile(file)
+        }
     }
 }
 
